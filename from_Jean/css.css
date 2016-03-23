@@ -1,6 +1,7 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: Arial; }
 
 .gate {
   width: 100vw;
@@ -10,32 +11,39 @@
   overflow: hidden; }
 
 .gate .developer {
-  width: 100%;
+  width: 55%;
   height: 100vh;
   position: absolute;
   top: 0;
-  right: 50%;
+  left: -100px;
   background-color: #ccc;
   transform: matrix(1, 0, -0.08715, 0.99619, 0, 0);
   z-index: 2;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: width .5s ease; }
   .gate .developer .centerbox {
-    right: 0;
-    margin-right: -70px;
+    left: 1060px;
+    margin-left: -70px;
     background-color: #000;
     transform: matrix(1, 0, 0.08715, 0.99619, 0, 0); }
     .gate .developer .centerbox .leftbox, .gate .developer .centerbox .topbox, .gate .developer .centerbox .bottombox {
       background-color: #ccc; }
   .gate .developer .gate-left {
-    width: 150px;
+    width: 0;
     height: 30px;
     position: absolute;
     top: 50%;
-    right: 25%;
+    left: 480px;
     margin-top: -15px;
-    font-size: 30px; }
-  .gate .developer:hover {
-    right: 25%; }
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 5px;
+    transition: width .5s ease; }
+  .gate .developer .gate-left.active {
+    width: 220px;
+    background-color: #000;
+    color: #fff; }
 .gate .art {
   width: 100%;
   height: 100vh;
@@ -51,15 +59,23 @@
     .gate .art .centerbox .leftbox, .gate .art .centerbox .topbox, .gate .art .centerbox .bottombox {
       background-color: #000; }
   .gate .art .gate-right {
-    width: 150px;
+    width: 0;
     height: 30px;
     position: absolute;
     top: 50%;
     left: 70%;
     margin-top: -15px;
-    font-size: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
     color: #fff;
+    letter-spacing: 5px;
+    transition: width .5s ease;
     transform: matrix(1, 0, -0.08715, 0.99619, 0, 0); }
+  .gate .art .gate-right.active {
+    width: 150px;
+    background-color: #fff;
+    color: #000; }
 .gate .centerbox {
   width: 140px;
   height: 140px;
