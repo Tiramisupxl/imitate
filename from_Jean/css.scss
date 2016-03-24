@@ -1,5 +1,5 @@
 *{
-  margin:0;padding:0;font-family: Arial;
+  box-sizing:border-box;margin:0;padding:0;font-family: Arial;
 }
 .gate{
   width:100vw;height:100vh;position: relative;background-color:#000;overflow:hidden;
@@ -16,7 +16,7 @@
     }
     .gate-left{
       width:0;height:30px;position: absolute;top:50%;left:480px;margin-top:-15px;font-size:18px;line-height:30px;text-align: center;
-      letter-spacing: 5px;transition:width .5s ease;
+      letter-spacing: 10px;transition:width .5s ease;cursor:pointer;
     }
     .gate-left.active{
       width:220px; background-color: #000;color:#fff;
@@ -32,7 +32,7 @@
     }
     .gate-right{
       width:0;height:30px;position: absolute;top:50%;left:70%;margin-top:-15px;font-size:18px;line-height:30px;text-align:center;
-      color:#fff;  letter-spacing:5px;transition:width .5s ease;transform: matrix(1, 0, -0.08715, 0.99619, 0, 0);
+      color:#fff;  letter-spacing:10px;transition:width .5s ease;transform: matrix(1, 0, -0.08715, 0.99619, 0, 0);cursor:pointer;
     }
     .gate-right.active{
       width:150px; background-color: #fff;color:#000;
@@ -49,5 +49,53 @@
     .bottombox{
       width:40px;height:40px;position: absolute;top:80px;left:80px;
     }
+  }
+}
+
+.gate{
+  .developer-imgs{
+    width:100%;height:auto;opacity: 0;display:none;padding-left:200px;margin-top:100px;overflow-x:scroll ;
+    ul{
+      width:6000px;height:897px;
+      li{
+        display: inline-block;
+        div{
+          position: relative;overflow: hidden;cursor: pointer;
+          &:hover{
+            .mask{
+              opacity: 1;
+              span{transform:matrix(1,0,0,1,0,0)}
+            }
+          }
+        }
+      }
+    }
+    img{
+      width:100%;height:auto;
+    }
+    .topleft,.topright,.bottomleft,.bottomright{
+      display: inline-block;width:500px;height: 281px;
+    }
+    .topleft,.bottomleft{
+      margin-right:20px;
+    }
+    .bottom,.top{
+      width:1020px;height:500px;
+    }
+    .top{margin-bottom: 20px;}
+    .bottom{margin-top:20px; }
+    .mask{
+      width:100%;height:100%;position:absolute;top:0;left:0;background-color: rgba(0,0,0,.8);z-index:2;opacity: 0;transition: opacity .6s ease;
+      span{display:block;position:absolute;left:20px;bottom:50px;font-size:30px;color:#fff;transform: matrix(1,0,0,1,0,20);
+        transition:transform .6s ease;
+      }
+    }
+  }
+}
+
+.scrollBar{
+  position:absolute;left:250px;bottom:20px;right:100px;
+  .scrollIndicator{
+    width:100px;height:3px;background-color: aqua;
   }
 }

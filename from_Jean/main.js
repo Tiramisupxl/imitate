@@ -11,3 +11,21 @@ artist.on("mouseover",function(){
     $(this).find(".gate-right").addClass("active");
     developer.find(".gate-left").removeClass("active");
 });
+
+//点击developer出现图片页
+var develpoerPointer=$(".gate-left");
+develpoerPointer.on("click",function(){
+    //alert("yes");
+    developer.off("mouseover");
+    artist.off("mouseover");
+    $(this).fadeOut();
+    developer.find(".centerbox").fadeOut();
+    $(".gate-right").css({
+        "width":"25px",
+        "left":"90%",
+        "overflow":"hidden"
+    });
+    developer.width("90%");
+    $(".developer-imgs").show().css("opacity","1")
+    });
+
