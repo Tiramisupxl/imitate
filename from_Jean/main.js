@@ -1,31 +1,54 @@
+var gate=$("#gate");
 var developer=$("#developer");
 var artist=$("#artist");
+var developerPage=$("#developerPage");
+var artistPage=$("#artistPage");
 //页面一进来的鼠标滑动效果
-developer.on("mouseover",function(){
-    $(this).width("65%");
-    $(this).find(".gate-left").addClass("active");
-    artist.find(".gate-right").removeClass("active");
+var hover=true;
+var gateHover=function(){
+    console.log(hover);
+        developer.on("mouseover",function(){
+            if(hover){
+                $(this).width("65%");
+            }
+
+        });
+        artist.on("mouseover",function(){
+            if(hover){
+                developer.width("50%");
+            }
+        });
+        gate.addClass("init").removeClass("now-dev now-art");
+        $(".imgs").hide();
+};
+//点击page
+var pageEnter=function(obj,nowClass){
+    hover=false;
+    if(obj==developer){
+        developer.width("90%");
+        //alert("no");
+    }else if(obj==artist){
+        developer.width("10%");
+    }
+    obj.find(".imgs").show().css("opacity","1");
+    gate.removeClass("init").addClass(nowClass);
+};
+//进入page
+developerPage.on("click",function(){
+    if(gate.hasClass("init")){
+        pageEnter(developer,"now-dev");
+    }else{
+        hover=true;
+        gateHover();
+    }
 });
-artist.on("mouseover",function(){
-    developer.width("50%");
-    $(this).find(".gate-right").addClass("active");
-    developer.find(".gate-left").removeClass("active");
+artistPage.on("click",function(){
+    if(gate.hasClass("init")){
+        pageEnter(artist,"now-art")
+    }else{
+        hover=true;
+        gateHover()
+    }
 });
 
-//点击developer出现图片页
-var develpoerPointer=$(".gate-left");
-develpoerPointer.on("click",function(){
-    //alert("yes");
-    developer.off("mouseover");
-    artist.off("mouseover");
-    $(this).fadeOut();
-    developer.find(".centerbox").fadeOut();
-    $(".gate-right").css({
-        "width":"25px",
-        "left":"90%",
-        "overflow":"hidden"
-    });
-    developer.width("90%");
-    $(".developer-imgs").show().css("opacity","1")
-    });
-
+gateHover();
