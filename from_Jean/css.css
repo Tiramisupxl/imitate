@@ -110,12 +110,12 @@
   .gate.now-dev .art .gate-text .text-wrap {
     width: 20px;
     overflow: hidden; }
-.gate.now-dev .art .centerbox {
-  display: none; }
 .gate.now-dev .art:hover .gate-text {
   width: 20px;
   background-color: #fff;
   color: #000; }
+.gate.now-dev .centerbox {
+  display: none; }
 .gate.now-dev .developer .gate-text {
   display: none; }
 
@@ -124,12 +124,12 @@
   .gate.now-art .developer .gate-text .text-wrap {
     width: 20px;
     overflow: hidden; }
-.gate.now-art .developer .centerbox {
-  display: none; }
 .gate.now-art .developer:hover .gate-text {
   width: 20px;
   background-color: #fff;
   color: #000; }
+.gate.now-art .centerbox {
+  display: none; }
 .gate.now-art .art .gate-text {
   display: none; }
 
@@ -196,6 +196,7 @@
   left: 250px;
   bottom: 20px;
   right: 100px;
+  width: 100px;
   transition: transform .5s ease; }
   .scrollBar .scrollIndicator {
     width: 100px;
