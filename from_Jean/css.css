@@ -142,10 +142,11 @@
   margin-top: 100px;
   overflow-x: scroll; }
 .gate ul {
-  width: 6000px;
-  height: 897px; }
+  height: 897px;
+  transition: transform .5s ease; }
   .gate ul li {
-    display: inline-block; }
+    display: inline-block;
+    width: 1030px; }
     .gate ul li div {
       position: relative;
       overflow: hidden;
@@ -194,7 +195,8 @@
   position: absolute;
   left: 250px;
   bottom: 20px;
-  right: 100px; }
+  right: 100px;
+  transition: transform .5s ease; }
   .scrollBar .scrollIndicator {
     width: 100px;
     height: 3px;

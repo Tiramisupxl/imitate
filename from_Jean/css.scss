@@ -116,9 +116,9 @@
     overflow-x: scroll;
   }
   ul {
-    width: 6000px;  height: 897px;
+     height: 897px;transition:transform .5s ease;
     li {
-      display: inline-block;
+      display: inline-block;width:1030px;
       div {
         position: relative;  overflow: hidden;  cursor: pointer;
         &:hover {
@@ -163,7 +163,7 @@
 
 
 .scrollBar{
-  position:absolute;left:250px;bottom:20px;right:100px;
+  position:absolute;left:250px;bottom:20px;right:100px;transition: transform .5s ease;
   .scrollIndicator{
     width:100px;height:3px;background-color: aqua;
   }
